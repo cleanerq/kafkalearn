@@ -24,18 +24,15 @@ public class CustomProducerAck {
         Producer<String, String> producer = new
                 KafkaProducer<>(props);
         for (int i = 0; i < 10; i++) {
-            producer.send(new ProducerRecord<String, String>("test03",
-                    Integer.toString(i), Integer.toString(i)), new Callback() {
-                //回调函数，该方法会在 Producer 收到 ack 时调用，为异步调用
-                @Override
-                public void onCompletion(RecordMetadata metadata,
-                                         Exception exception) {
-                    if (exception == null) {
-                        System.out.println("success->" +
-                                metadata.offset());
-                    } else {
-                        exception.printStackTrace();
-                    }
+            //回调函数，该方法会在 Producer 收到 ack 时调用，为异步调用
+            producer.send(new ProducerRecord<String, String>("newt",
+                    Integer.toString(i), Integer.toString(i)), (metadata, exception) -> {
+                if (exception == null) {
+                    System.out.println("success->offset:" +
+                            metadata.offset() + " partition:" + metadata.partition()
+                            + " topic:" + metadata.topic());
+                } else {
+                    exception.printStackTrace();
                 }
             });
         }
