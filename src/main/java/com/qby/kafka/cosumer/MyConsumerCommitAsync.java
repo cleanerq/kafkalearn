@@ -9,6 +9,8 @@ import java.util.Properties;
 
 /**
  * 异步提交offset
+ * 而先消费后提交 offset，有可能会造成数据
+ * 的重复消费。
  */
 public class MyConsumerCommitAsync {
     public static void main(String[] args) {

@@ -16,7 +16,7 @@ public class CustomConsumer {
 //创建配置信息
         Properties props = new Properties();
 //Kafka 集群
-        props.put("bootstrap.servers", "hadoop102:9092");
+        props.put("bootstrap.servers", "172.16.13.168:9092");
 //消费者组，只要 group.id 相同，就属于同一个消费者组
         props.put("group.id", "test");
 //关闭自动提交 offset
@@ -34,15 +34,13 @@ public class CustomConsumer {
                 ConsumerRebalanceListener() {
                     //该方法会在 Rebalance 之前调用
                     @Override
-                    public void
-                    onPartitionsRevoked(Collection<TopicPartition> partitions) {
+                    public void onPartitionsRevoked(Collection<TopicPartition> partitions) {
                         commitOffset(currentOffset);
                     }
 
                     //该方法会在 Rebalance 之后调用
                     @Override
-                    public void
-                    onPartitionsAssigned(Collection<TopicPartition> partitions) {
+                    public void onPartitionsAssigned(Collection<TopicPartition> partitions) {
                         currentOffset.clear();
                         for (TopicPartition partition : partitions) {
                             consumer.seek(partition, getOffset(partition));// 定位到最近提交的 offset 位置继续消费
@@ -63,11 +61,14 @@ public class CustomConsumer {
 
     //获取某分区的最新 offset
     private static long getOffset(TopicPartition partition) {
+        // offset 保存到mysql
+        // 重新从mysql读取 offset
         return 0;
     }
 
     //提交该消费者所有分区的 offset
     private static void commitOffset(Map<TopicPartition, Long>
                                              currentOffset) {
+        // 提交到MySQL offset
     }
 }
