@@ -7,6 +7,9 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * 同步发送消息
+ */
 public class CustomProducerSync {
     public static void main(String[] args) throws ExecutionException,
             InterruptedException {

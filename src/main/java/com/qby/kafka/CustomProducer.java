@@ -10,6 +10,7 @@ import java.util.concurrent.ExecutionException;
 
 /**
  * 不带回调的API
+ * 异步发送消息
  */
 public class CustomProducer {
 
