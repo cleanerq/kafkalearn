@@ -7,6 +7,9 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * 异步提交offset
+ */
 public class MyConsumerCommitAsync {
     public static void main(String[] args) {
         Properties props = new Properties();

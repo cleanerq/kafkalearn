@@ -25,7 +25,7 @@ public class MyConsumerCommitSync {
                 "org.apache.kafka.common.serialization.StringDeserializer");
         KafkaConsumer<String, String> consumer = new
                 KafkaConsumer<>(props);
-        consumer.subscribe(Arrays.asList("first"));//消费者订阅主题
+        consumer.subscribe(Arrays.asList("test03"));//消费者订阅主题
         while (true) {
             //消费者拉取数据
             ConsumerRecords<String, String> records =
