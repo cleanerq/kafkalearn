@@ -15,7 +15,7 @@ public class MyConsumerCommitSync {
     public static void main(String[] args) {
         Properties props = new Properties();
         //Kafka 集群
-        props.put("bootstrap.servers", "172.16.13.168:9092");
+        props.put("bootstrap.servers", "172.16.13.150:9092");
         //消费者组，只要 group.id 相同，就属于同一个消费者组
         props.put("group.id", "test");
         props.put("enable.auto.commit", "false");//关闭自动提交 offset

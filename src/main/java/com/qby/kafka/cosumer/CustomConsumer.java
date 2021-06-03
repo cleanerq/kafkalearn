@@ -16,7 +16,7 @@ public class CustomConsumer {
 //创建配置信息
         Properties props = new Properties();
 //Kafka 集群
-        props.put("bootstrap.servers", "172.16.13.168:9092");
+        props.put("bootstrap.servers", "172.16.13.150:9092");
 //消费者组，只要 group.id 相同，就属于同一个消费者组
         props.put("group.id", "test");
 //关闭自动提交 offset
@@ -30,7 +30,7 @@ public class CustomConsumer {
         KafkaConsumer<String, String> consumer = new
                 KafkaConsumer<>(props);
 //消费者订阅主题
-        consumer.subscribe(Arrays.asList("first"), new
+        consumer.subscribe(Arrays.asList("qby01"), new
                 ConsumerRebalanceListener() {
                     //该方法会在 Rebalance 之前调用
                     @Override

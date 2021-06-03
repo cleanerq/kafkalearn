@@ -12,7 +12,7 @@ public class PartitionerProducer {
     public static void main(String[] args) {
         Properties props = new Properties();
 // Kafka 服务端的主机名和端口号
-        props.put("bootstrap.servers", "172.16.13.168:9092");
+        props.put("bootstrap.servers", "172.16.13.150:9092");
 // 等待所有副本节点的应答
         props.put("acks", "all");
 // 消息发送最大尝试次数

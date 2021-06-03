@@ -17,7 +17,7 @@ public class CustomProducer {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Properties props = new Properties();
         //kafka 集群，broker-list
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "172.16.13.168:9092");
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "172.16.13.150:9092");
         props.put("acks", "all");
         //重试次数
         props.put("retries", 1);

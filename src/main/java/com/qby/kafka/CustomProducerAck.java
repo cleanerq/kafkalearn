@@ -11,7 +11,7 @@ public class CustomProducerAck {
     public static void main(String[] args) throws ExecutionException,
             InterruptedException {
         Properties props = new Properties();
-        props.put("bootstrap.servers", "172.16.13.168:9092");//kafka 集群，broker-list
+        props.put("bootstrap.servers", "172.16.13.150:9092");//kafka 集群，broker-list
         props.put("acks", "all");
         props.put("retries", 1);//重试次数
         props.put("batch.size", 16384);//批次大小

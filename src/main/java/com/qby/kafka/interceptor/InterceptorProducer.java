@@ -13,7 +13,7 @@ public class InterceptorProducer {
     public static void main(String[] args) throws Exception {
 // 1 设置配置信息
         Properties props = new Properties();
-        props.put("bootstrap.servers", "172.16.13.168:9092");
+        props.put("bootstrap.servers", "172.16.13.150:9092");
         props.put("acks", "all");
         props.put("retries", 3);
         props.put("batch.size", 16384);
