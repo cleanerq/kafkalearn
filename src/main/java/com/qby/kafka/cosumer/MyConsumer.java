@@ -14,7 +14,7 @@ public class MyConsumer {
     public static void main(String[] args) {
         Properties props = new Properties();
         props.put("bootstrap.servers", "172.16.13.150:9092");
-        props.put("group.id", "test1");
+        props.put("group.id", "test02");
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
         props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
         props.put("key.deserializer",
@@ -25,7 +25,7 @@ public class MyConsumer {
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         KafkaConsumer<String, String> consumer = new
                 KafkaConsumer<>(props);
-        consumer.subscribe(Arrays.asList("qby01"));
+        consumer.subscribe(Arrays.asList("test02"));
 
         while (true) {
             ConsumerRecords<String, String> records =
