@@ -25,7 +25,7 @@ public class MyConsumer {
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         KafkaConsumer<String, String> consumer = new
                 KafkaConsumer<>(props);
-        consumer.subscribe(Arrays.asList("test02"));
+        consumer.subscribe(Arrays.asList("qby03"));
 
         while (true) {
             ConsumerRecords<String, String> records =

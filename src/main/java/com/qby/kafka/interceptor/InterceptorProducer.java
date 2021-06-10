@@ -29,7 +29,7 @@ public class InterceptorProducer {
         interceptors.add("com.qby.kafka.interceptor.CounterInterceptor");
         props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG,
                 interceptors);
-        String topic = "qby01";
+        String topic = "qby03";
         Producer<String, String> producer = new
                 KafkaProducer<>(props);
 // 3 发送消息
